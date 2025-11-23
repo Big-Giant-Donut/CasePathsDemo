@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D85BB4DA2ED3B16F00CB92C4 /* CasePaths in Frameworks */ = {isa = PBXBuildFile; productRef = D85BB4D92ED3B16F00CB92C4 /* CasePaths */; };
+		D85BB4DC2ED3B16F00CB92C4 /* CasePathsCore in Frameworks */ = {isa = PBXBuildFile; productRef = D85BB4DB2ED3B16F00CB92C4 /* CasePathsCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		D85BB4CC2ED3B10300CB92C4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -35,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85BB4DC2ED3B16F00CB92C4 /* CasePathsCore in Frameworks */,
+				D85BB4DA2ED3B16F00CB92C4 /* CasePaths in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +84,8 @@
 			);
 			name = CasePathsDemo;
 			packageProductDependencies = (
+				D85BB4D92ED3B16F00CB92C4 /* CasePaths */,
+				D85BB4DB2ED3B16F00CB92C4 /* CasePathsCore */,
 			);
 			productName = CasePathsDemo;
 			productReference = D85BB4CE2ED3B10300CB92C4 /* CasePathsDemo */;
@@ -106,6 +115,9 @@
 			);
 			mainGroup = D85BB4C52ED3B10300CB92C4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D85BB4D82ED3B16F00CB92C4 /* XCRemoteSwiftPackageReference "swift-case-paths" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D85BB4CF2ED3B10300CB92C4 /* Products */;
 			projectDirPath = "";
@@ -291,6 +303,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D85BB4D82ED3B16F00CB92C4 /* XCRemoteSwiftPackageReference "swift-case-paths" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-case-paths";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D85BB4D92ED3B16F00CB92C4 /* CasePaths */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85BB4D82ED3B16F00CB92C4 /* XCRemoteSwiftPackageReference "swift-case-paths" */;
+			productName = CasePaths;
+		};
+		D85BB4DB2ED3B16F00CB92C4 /* CasePathsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85BB4D82ED3B16F00CB92C4 /* XCRemoteSwiftPackageReference "swift-case-paths" */;
+			productName = CasePathsCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D85BB4C62ED3B10300CB92C4 /* Project object */;
 }
