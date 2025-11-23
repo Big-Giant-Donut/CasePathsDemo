@@ -7,12 +7,11 @@
 
 import CasePaths
 
-public protocol TheAction: CasePathable {}
 public protocol ChildAction: CasePathable {}
 
 public struct Research {
     @CasePathable
-    public enum ParentAction: TheAction {
+    public enum ParentAction {
         case child1(Action)
         case child2(any ChildAction)
     }
@@ -37,23 +36,6 @@ public struct Research {
         print(action2CasePath)                                  // \Case<ParentAction>.subscript(dynamicMember: <unknown>).subscript(as: <unknown>)
         print(type(of: action2CasePath(.somethingHappened)))    // Could not cast value of type 'Action' to 'ParentAction'.
         print(action2CasePath(.somethingHappened))
-
-    }
-}
-
-extension Case where Value == Research.Action {
-    public init<Root>(_ keyPath: CaseKeyPath<Root, Value>) where Root: TheAction {
-        print("my keyPath init")
-        self.init(
-            embed: { Research.ParentAction.child2($0) },
-            extract: {
-                if case let Research.ParentAction.child2(child as Research.Action) = $0 {
-                    return child
-                } else {
-                    return nil
-                }
-            }
-        )
     }
 }
 
